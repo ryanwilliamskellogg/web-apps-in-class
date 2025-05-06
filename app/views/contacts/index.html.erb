@@ -1,10 +1,10 @@
 <!-- name the header -->
 <h1>Contacts</h1>
 
-<!-- define and pull in the array -->
+<!-- Define and find in the array -->
 <% contacts = Contact.all %>
 
-<!--Display the array int he terminal to understand column names -->
+<!--Display the array in the terminal to understand column names or go to scriptsthen create_data -->
 
 <%= puts contacts.inspect%>
 
@@ -12,9 +12,11 @@
 
 <ul>
   <% for contact in contacts %>
+    <% company = Company.find_by("id" => contact.company_id) %>
     <li>
-      <%= contact.first_name %> <%= contact.last_name %> — 
-      <%= contact.company_id%>
+      <!-- Both bracket and dot notation are valid in Rails -->
+      <%= contact["first_name"] %> <%= contact.last_name %> — 
+      <%= company.name %>
     </li>
   <% end %>
 </ul>
