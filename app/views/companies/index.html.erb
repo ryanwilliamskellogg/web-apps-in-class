@@ -1,0 +1,13 @@
+<h1>Companies</h1>
+
+<!-- This is what a comment looks like btw -->
+
+<% companies = Company.all%>
+
+<ul>
+  <% for company in companies %>
+    <li><%=company.inspect %></li>
+<%end%>
+</ul>
+
+<!-- The above combines HTML with Ruby and a created table to show on the front end. These comments show on the front end as well.-->

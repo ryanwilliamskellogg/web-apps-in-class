@@ -1,0 +1,20 @@
+<!-- name the header -->
+<h1>Contacts</h1>
+
+<!-- define and pull in the array -->
+<% contacts = Contact.all %>
+
+<!--Display the array int he terminal to understand column names -->
+
+<%= puts contacts.inspect%>
+
+<!--Creates the loop to display contact first name, last name, and company name-->
+
+<ul>
+  <% for contact in contacts %>
+    <li>
+      <%= contact.first_name %> <%= contact.last_name %> — 
+      <%= contact.company_id%>
+    </li>
+  <% end %>
+</ul>
